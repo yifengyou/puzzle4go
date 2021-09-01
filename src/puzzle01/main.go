@@ -28,6 +28,17 @@ continue for import return var
 数据类型、内置函数都是可以重定义，但是一般不这么做
 */
 
+/*
+引导程序整体结构8个关键字：
+package、import、const、var、func、defer、go、return
+
+声明复合数据结构的4个关键字：
+struct、interface、map、chan
+
+控制程序结构的13个关键字：
+if、else；for、 range、break、continue；
+switch、select、type、case、default、fallthrough；goto
+ */
 
 
 //参考答案：AC

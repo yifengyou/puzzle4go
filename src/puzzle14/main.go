@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-//[intermediate] 下面的程序的运行结果是（）
+//下面的程序的运行结果是（）
 //func main() {
 //	if (true) {
 //		defer fmt.Printf("1")
@@ -19,6 +19,8 @@ import "fmt"
 
 //A 人家有一个if，怎么可能是3个
 //defer是在函数执行后，再执行，所以先执行3，然后是true，那么就是1
+//defer需要注册才能使用，执行到defer语句的时候其实就是注册过程
+//defer是有性能损耗的
 
 func main() {
 		if (true) {
@@ -27,6 +29,7 @@ func main() {
 			defer fmt.Printf("2")
 		}
 		fmt.Printf("3")
+		// 31
 }
 
 
