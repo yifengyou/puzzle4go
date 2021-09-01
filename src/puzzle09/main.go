@@ -1,8 +1,8 @@
 package main
+
 import "C"
 
-//[intermediate] 对于函数定义：
-//
+//对于函数定义：
 //func add(args ...int) int {
 //	sum := 0
 //	for _, arg := range args {
@@ -15,12 +15,11 @@ import "C"
 //B. add(1, 3, 7)
 //C. add([]int{1, 2})
 //D. add([]int{1, 3, 7}...)
-//参考答案：ABD
 
 func main() {
 	//add(1, 2)
 	//add(1, 3, 7)
-	add([]int{1, 2})
+	//add([]int{1, 2}) // Cannot use '[]int{1, 2}' (type []int) as the type int
 	//add([]int{1, 3, 7}...)
 }
 
@@ -34,3 +33,5 @@ func add(args ...int) int {
 	}
 	return sum
 }
+
+//参考答案：ABD

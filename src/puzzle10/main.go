@@ -28,12 +28,12 @@ package main
 //A
 //type MyInt int
 //var i int = 1
-//var j MyInt = i
+//var j MyInt = i //Cannot use 'i' (type int) as the type MyInt
 
 //B.
 //type MyInt int
 //var i int = 1
-//var j MyInt = (MyInt)i
+//var j MyInt = (MyInt)i //Type 'MyInt' is not an expression
 
 //C
 //type MyInt int
@@ -43,7 +43,7 @@ package main
 //D.
 //type MyInt int
 //var i int = 1
-//var j MyInt = i.(MyInt)
+//var j MyInt = i.(MyInt) // Invalid type assertion: i.(MyInt) (non-interface type int on the left)
 
 func main() {
 
