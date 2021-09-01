@@ -1,6 +1,6 @@
 package main
 
-//[intermediate] 如果Add函数的调用代码为：
+//如果Add函数的调用代码为：
 //func main() {
 //	var a Integer = 1
 //	var b Integer = 2
@@ -30,7 +30,7 @@ package main
 //func (a *Integer) Add(b *Integer) Integer {
 //	return *a + *b
 //}
-//参考答案：A
+
 
 //A 看定义是可以的，很顺眼，
 //C,定义是指针类型，不能调用
@@ -38,3 +38,6 @@ package main
 
 func main() {
 }
+
+
+//参考答案：A

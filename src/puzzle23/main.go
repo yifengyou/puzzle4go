@@ -2,28 +2,26 @@ package main
 
 import "fmt"
 
-//[primary] 对于局部变量整型切片x的赋值，下面定义正确的是（）
-//A.
-x := []int{
-1, 2, 3,
-4, 5, 6,
-}
-//B.
-//
-x := []int{
-1, 2, 3,
-4, 5, 6
-}
-//C.
-//
-x := []int{
-1, 2, 3,
-4, 5, 6}
-//D.
-x := []int{1, 2, 3, 4, 5, 6,}
-//参考答案：ACD
-
 func main() {
+	//对于局部变量整型切片x的赋值，下面定义正确的是（）
+	//A.
+	a := []int{
+		1, 2, 3,
+		4, 5, 6,
+	}
+	//B.
+	//b := []int{
+	//	1, 2, 3,
+	//	4, 5, 6 // Need a trailing comma before a newline in the composite literal
+	//}
+	//C.
+	//
+	c := []int{
+		1, 2, 3,
+		4, 5, 6}
+	//D.
+	d := []int{1, 2, 3, 4, 5, 6}
+
 	//x := []int{
 	//	1, 2, 3,
 	//	4, 5, 6,
@@ -38,7 +36,9 @@ func main() {
 	//	1, 2, 3,
 	//	4, 5, 6}
 
-	x := []int{1, 2, 3, 4, 5, 6,}
+	x := []int{1, 2, 3, 4, 5, 6}
 
-	fmt.Println(x)
+	fmt.Println(a, c, d, x)
 }
+
+//参考答案：ACD

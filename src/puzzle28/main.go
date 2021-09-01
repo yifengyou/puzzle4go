@@ -1,6 +1,6 @@
 package main
 
-//[intermediate] 关于GetPodAction定义，下面赋值正确的是（）
+//关于GetPodAction定义，下面赋值正确的是（）
 type Fragment interface {
 	Exec(transInfo *TransInfo) error
 }
