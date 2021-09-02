@@ -1,6 +1,6 @@
 package main
 
-//[intermediate] 关于无缓冲和有冲突的channel，下面说法正确的是（）
+//关于无缓冲和有冲突的channel，下面说法正确的是（）
 //A. 无缓冲的channel是默认的缓冲为1的channel
 //B. 无缓冲的channel和有缓冲的channel都是同步的
 //C. 无缓冲的channel和有缓冲的channel都是非同步的
