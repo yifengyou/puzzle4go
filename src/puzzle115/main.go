@@ -12,7 +12,6 @@ package main
 //
 //E. 无缓冲的channel是同步的，而有缓冲的channel是非同步的
 
-
 func main() {
-	
+
 }

@@ -10,7 +10,10 @@ package main
 //Fprintf()， 是把格式字符串输出到指定文件设备中，所以参数比printf多一个文件指针FILE*。
 //			  主要用于文件操作。Fprintf()是格式化输出到一个stream，通常是到文件。
 
+//func Fprintf(w io.Writer, format string, a ...interface{}) (n int, err error)
+//func Sprintf(format string, a ...interface{}) string
+//func Printf(format string, a ...interface{}) (n int, err error)
 
 func main() {
-	
+
 }

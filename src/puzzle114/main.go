@@ -5,7 +5,6 @@ package main
 //(2) RWMutex在读锁占用的情况下，会阻止写，但不阻止读
 //(3) RWMutex在写锁占用情况下，会阻止任何其他goroutine（无论读和写）进来，整个锁相当于由该goroutine独占
 
-
 func main() {
-	
+
 }
