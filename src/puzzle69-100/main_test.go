@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"testing"
+)
+
 //69 数组是一个值类型（）
 //参考答案：对的
 
@@ -30,42 +35,61 @@ package main
 //return
 //}
 //...
-//参考答案：对的
-
+//参考答案：对的 defer注册应在错误判断之后进行
 // Open opens the named file for reading. If successful, methods on
 // the returned file can be used for reading; the associated file
 // descriptor has mode O_RDONLY.
 // If there is an error, it will be of type *PathError.
 
-//
 //75 Golang不支持自动垃圾回收（）
 //参考答案：错的，支持的
-//
+// 对于实时性要求比较高的程序，一定要关注GC问题。因为golang的GC非常稚嫩，与java相比还差的很远
+
 //76 Golang支持反射，反射最常见的使用场景是做对象的序列化（）
 //参考答案：对的
-//
-//77 Golang可以复用C/C++的模块，这个功能叫Cgo（）
-//参考答案：工作中使用go ,没有服用过c/c++模块，这个不是很确定，有知道的小伙伴可以打在弹幕上
 
-//
+//77 Golang可以复用C/C++的模块，这个功能叫Cgo（）
+//参考答案：对的
+
 //78 下面代码中两个斜点之间的代码，比如json:"x"，作用是X字段在从结构体实例编码到JSON数据格式的时候，
 //使用x作为名字，这可以看作是一种重命名的方式（）
+// 字段标签属于结构体的一部分，标签不同，结构体不同
 //type Position struct {
 //	X int `json:"x"`
 //	Y int `json:"y"`
 //	Z int `json:"z"`
 //}
 //参考答案：对的， 输出的json{"x":1,"y":2,"z":3}
-//
+
 //79 通过成员变量或函数首字母的大小写来决定其作用域（）
-//参考答案：对的
-//
+//参考答案：对的。大写对外可见
+
 //80 对于常量定义zero(const zero = 0.0)，zero是浮点型常量（）
 //参考答案：错的， 是float64
+func TestConstZero(t *testing.T) {
+	const zero = 0.1
+	fmt.Printf("%#v - %T", zero, zero) // 0.1 - float64
+}
+
 //
 //81 对变量x的取反操作是~x（）
-//参考答案：错的 ， !
-//
+//参考答案：错的. go中取反操作应该是^
+
+// 一般语言中，按位取反是：~
+func TestGetReverse(t *testing.T) {
+	var1 := uint(8)
+	//var2 := !var1 //
+	var3 := ^var1
+	fmt.Printf("%08b - %T\n", var1, var1) // 8 - int
+	//fmt.Printf("%#v - %T", ~var1, ~var1) // Unexpected '~'
+	fmt.Printf("%08b - %T\n", var3, var3) // -9 - int
+	// 00001000 - uint
+	//1111111111111111111111111111111111111111111111111111111111110111 - uint
+	b := true
+	f := !b
+	fmt.Println(b, f) // true false
+}
+
 //82 下面的程序的运行结果是xello（）
 //func main() {
 //	str := "hello"
@@ -73,7 +97,8 @@ package main
 //	fmt.Println(str)
 //}
 //参考答案：错的， str[0] = 'x' 这句话编译都不能通过，Go字符串是不可变的
-//
+
+
 //83 golang支持goto语句（）
 //参考答案：对的
 //
