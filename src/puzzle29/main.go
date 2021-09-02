@@ -1,6 +1,6 @@
 package main
 
-//关于GoMock，下面说法正确的是（）
+//关于GoMock，下面说法正确的是（AD）
 //A. GoMock可以对interface打桩
 //B. GoMock可以对类的成员函数打桩
 //C. GoMock可以对函数打桩
@@ -17,7 +17,7 @@ Monkey
 go测试框架
 */
 
-//开发需要了解？
+//开发需要了解？go测试工程师必备技术
 //这个看官方就可以了，过
 
 func main() {
