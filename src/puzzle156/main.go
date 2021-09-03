@@ -6,25 +6,40 @@ import "fmt"
 type People interface {
 	Show()
 }
-type Student struct {}
+type Student struct{}
 
-func(stu * Student) Show() {}
+func (stu *Student) Show() {}
 
 func live() People {
 	var stu *Student
+	fmt.Printf("%#v\n", stu)
 	return stu
 }
 
 func main() {
-
-	if live() == nil {
+	target := live()
+	fmt.Printf("%#v\n", target)
+	if target == nil {
 		fmt.Println("AAAAAAA")
 	} else {
 		fmt.Println("BBBBBBB")
 	}
+
+	var a interface{} = nil         // tab = nil, data = nil
+	var b interface{} = (*int)(nil) // tab 包含 *int 类型信息, data = nil
+
+	fmt.Println(a == nil) //true
+	fmt.Println(b == nil) //false
+	fmt.Println(b == (*int)(nil)) //true
+	fmt.Println(b == (*float64)(nil)) //false
 }
+
 //
 //	BBBBBBB
+
+// 只有pointer, channel, func, interface, map, or slice 这些类型的值才可以是nil
+// nil也是有类型的，很骚
+
 
 //interface 在 golang 中是一个非常重要的特性。它相对于其它语言有很多优势：
 //
@@ -45,7 +60,6 @@ type Life interface {
 	Happy()
 }
 
-
 //他们的底层结构如下：
 
 //type eface struct { empty
@@ -61,24 +75,24 @@ type Life interface {
 
 //_type表示实际类型信息.每个类型的_type信息由编译器在编译时生成。
 //	type _type struct {
-	//	size       uintptr  该类型所占用的字节数量
-	//	ptrdata    uintptr
-	//	hash       uint32   数据hash值
-	//	tflag      tflag
-	//	fieldalign uint8
-	//	kind       uint8	表示类型的种类，如bool,int ,float,string ,struct,interface等。
-	//	alg        *typeAlg
-	//	gcdata    *byte
-	//	str       nameOff	表示类型的名字信息，他是一个NameOFF（int32），通过这个nameOff，
-	//	ptrToThis typeOff
+//	size       uintptr  该类型所占用的字节数量
+//	ptrdata    uintptr
+//	hash       uint32   数据hash值
+//	tflag      tflag
+//	fieldalign uint8
+//	kind       uint8	表示类型的种类，如bool,int ,float,string ,struct,interface等。
+//	alg        *typeAlg
+//	gcdata    *byte
+//	str       nameOff	表示类型的名字信息，他是一个NameOFF（int32），通过这个nameOff，
+//	ptrToThis typeOff
 //	}
 //	type itab struct {
-	//	inter  *interfacetype  //接口类型    inter 指向对应的interface的类型信息。
-	//	_type  *_type          //结构类型	type和eface钟的一样，指向的是实际类型的描述信息。
-	//	link   *itab
-	//	bad    int32
-	//	inhash int32
-	//	fun    [1]uintptr      //方法集合,表示对于该特定的实际类型而言，interface中所有函数的地址。
+//	inter  *interfacetype  //接口类型    inter 指向对应的interface的类型信息。
+//	_type  *_type          //结构类型	type和eface钟的一样，指向的是实际类型的描述信息。
+//	link   *itab
+//	bad    int32
+//	inhash int32
+//	fun    [1]uintptr      //方法集合,表示对于该特定的实际类型而言，interface中所有函数的地址。
 //	}
 
 //type interfacetype struct {
@@ -86,4 +100,3 @@ type Life interface {
 //	pkgpath name        接口包名
 //	mhdr    []imethod   接口定义的函数列表
 //}
-

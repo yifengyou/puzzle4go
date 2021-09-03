@@ -3,26 +3,28 @@ package main
 import "fmt"
 
 //下面代码会输出什么？
+type People struct{}
 
-type People struct {}
-
-func(p * People) ShowA() {
+func (p *People) ShowA() {
 	fmt.Println("showA")
 	p.ShowB()
 }
-func(p * People) ShowB() {
+func (p *People) ShowB() {
 	fmt.Println("showB")
 }
+
 type Teacher struct {
 	People
 }
-func(t * Teacher) ShowB() {
+
+func (t *Teacher) ShowB() {
 	fmt.Println("teacher showB")
 }
 func main() {
-	t := Teacher {}
+	t := Teacher{}
 	t.ShowA()
 }
+
 //考点：go的组合继承
 //
 //解答：这是Golang的组合模式，可以实现OOP的继承。

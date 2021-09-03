@@ -44,7 +44,6 @@ package main
 //
 //手动：runtime.gc()
 
-
 func main() {
-	
+
 }

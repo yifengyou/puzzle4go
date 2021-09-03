@@ -6,9 +6,9 @@ import "fmt"
 type People interface {
 	Speak(string) string
 }
-type Stduent struct {}
+type Stduent struct{}
 
-func(stu *Stduent) Speak(think string)(talk string) {
+func (stu *Stduent) Speak(think string) (talk string) {
 	if think == "bitch" {
 		talk = "You are a good boy"
 	} else {
@@ -18,9 +18,17 @@ func(stu *Stduent) Speak(think string)(talk string) {
 }
 func main() {
 	var peo People = &Stduent{}
+
+	//var peo People = Stduent{}
+	// Cannot use 'Stduent{}' (type Stduent) as the type People Type does not
+	// implement 'People' as the 'Speak' method has a pointer receiver
+
 	think := "bitch"
 	fmt.Println(peo.Speak(think))
 }
+
+// You are a good boy
+
 
 //考点：golang的方法集
 //
