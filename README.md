@@ -1,6 +1,6 @@
 # puzzle4go
 
-大厂Go语言面试题
+Go语言面试题
 
 
 * 原始仓库：<https://github.com/i-coder-robot/puzzle4go>
