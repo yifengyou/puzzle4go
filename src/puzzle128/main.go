@@ -4,6 +4,7 @@ import "sync"
 
 //实现set
 
+// set类型为bool，有点骚
 type inter interface{}
 type Set struct {
 	m map[inter]bool
